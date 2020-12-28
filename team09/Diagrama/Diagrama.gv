@@ -1,0 +1,111 @@
+// AST
+digraph {
+	1 [label=Expresion]
+	2 [label=root]
+	1 -> 2
+	3 [label=igual]
+	4 [label="="]
+	3 -> 4
+	5 [label=1]
+	3 -> 5
+	6 [label="owner mode"]
+	7 [label="igual entero"]
+	8 [label="="]
+	7 -> 8
+	9 [label=1]
+	7 -> 9
+	10 [label="owner mode"]
+	10 -> 6
+	11 [label=MODE]
+	10 -> 11
+	10 -> 7
+	12 [label="db owner"]
+	13 [label=test]
+	12 -> 13
+	12 -> 10
+	14 [label="db exist"]
+	15 [label=IF]
+	14 -> 15
+	16 [label=NOT]
+	14 -> 16
+	17 [label=EXISTS]
+	14 -> 17
+	14 -> 12
+	18 [label="create statement"]
+	19 [label=CREATE]
+	18 -> 19
+	20 [label=DATABASE]
+	18 -> 20
+	18 -> 14
+	21 [label=";"]
+	18 -> 21
+	22 [label=entrada]
+	22 -> 18
+	23 [label=entrada]
+	23 -> 22
+	24 [label="data type"]
+	25 [label=smallint]
+	24 -> 25
+	26 [label=Constant]
+	27 [label="Column List"]
+	28 [label=idpuesto]
+	27 -> 28
+	27 -> 24
+	27 -> 26
+	29 [label="data type"]
+	30 [label=character]
+	29 -> 30
+	31 [label="Column List"]
+	31 -> 27
+	32 [label=","]
+	31 -> 32
+	33 [label=puesto]
+	31 -> 33
+	34 [label=29]
+	31 -> 34
+	35 [label="data type"]
+	36 [label=money]
+	35 -> 36
+	37 [label="Column List"]
+	37 -> 31
+	38 [label=","]
+	37 -> 38
+	39 [label=salariobase]
+	37 -> 39
+	40 [label=35]
+	37 -> 40
+	41 [label="ID List"]
+	42 [label=idpuesto]
+	41 -> 42
+	43 [label="Const Keys"]
+	44 [label=primary]
+	43 -> 44
+	45 [label=key]
+	43 -> 45
+	46 [label="("]
+	43 -> 46
+	43 -> 41
+	47 [label=")"]
+	43 -> 47
+	48 [label="Create Table Statement"]
+	49 [label=create]
+	48 -> 49
+	50 [label=table]
+	48 -> 50
+	51 [label=tbpuesto]
+	48 -> 51
+	52 [label="("]
+	48 -> 52
+	48 -> 37
+	53 [label=","]
+	48 -> 53
+	54 [label=43]
+	48 -> 54
+	55 [label=")"]
+	48 -> 55
+	56 [label=";"]
+	48 -> 56
+	57 [label=entrada]
+	57 -> 23
+	57 -> 48
+}
