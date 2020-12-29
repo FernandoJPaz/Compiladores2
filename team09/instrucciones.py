@@ -144,6 +144,7 @@ class AlterTable():
                 mensaje = mensaje + '\tLa columna no se pudo agregar'
                 return mensaje
             else:
+                j.alterAddColumn(self.base, self.id, None)
                 mensaje = mensaje + '\tColuma agregada con exito'
                 return mensaje
         #Cambiar el tipo de dato de una columna
@@ -318,6 +319,7 @@ class DropDB():
                 mensaje = mensaje + '\tLa base de datos no existe\n'
                 return mensaje
             else:
+                j.dropDatabase(self.id)
                 mensaje = mensaje + '\tBase de datos eliminada con éxito\n'
                 return mensaje
         else:
@@ -326,6 +328,7 @@ class DropDB():
                 mensaje = mensaje + '\tERROR --> La base de datos no existe, se interrumpe\n'
                 return mensaje
             else:
+                j.dropDatabase(self.id)
                 mensaje = mensaje + '\tBase de datos eliminada con éxito\n'
                 return mensaje
 
@@ -339,6 +342,7 @@ class DropTable():
         self.base = ts.get_dbActual().id
         drop = ts.drop_table(self.base, self.id)
         if drop == True:
+            j.dropTable(self.base, self.id)
             mensaje = mensaje + '\tTabla \'' + self.id + '\' eliminada con exito'
             return mensaje
         else:
